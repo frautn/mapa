@@ -29,3 +29,11 @@ pip install -U google-genai
 ```
 pip install pillow pydantic
 ```
+
+### Others
+
+Google News scraper:
+
+https://github.com/ranahaani/GNews 
+
+
