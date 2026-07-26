@@ -36,4 +36,7 @@ Google News scraper:
 
 https://github.com/ranahaani/GNews 
 
+```
+pip install gnews
 
+```

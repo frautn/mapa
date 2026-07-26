@@ -10,8 +10,11 @@ from google import genai
 client = genai.Client(api_key=api_key)
 # client = genai.Client()
 
+
+input = "Just testing."
+
 interaction = client.interactions.create(
-    model="gemini-3.5-flash",
-    input="Hi Gemini, I'm starting a new chat."
-)
+    model="gemini-3.5-flash-lite",
+    input=input)
 print(interaction.output_text)
+
