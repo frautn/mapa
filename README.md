@@ -32,6 +32,10 @@ pip install pillow pydantic
 
 ### Others
 
+```
+pip install pandas openpyxl
+```
+
 Google News scraper:
 
 https://github.com/ranahaani/GNews 
