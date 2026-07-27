@@ -4,6 +4,7 @@
 --------------
 Loops through a list of URLs and fetches article data from the Diffbot API for each URL.
 Stores the results in a json file for further processing.
+Subtitles might be missing in the results.
 
 Usage:
     python 12_diffbot_process_list.py
@@ -27,15 +28,27 @@ from pathlib import Path
 import pandas as pd
 
 base_dir = Path.cwd()
-excel_path = base_dir / ".." / "data" / "Monitoreo noticias – Mapa de la Policía.xlsx"
+csv_path = base_dir / ".." / "data" / "Monitoreo noticias – Mapa de la Policía_with_ID.csv"
 
+df = pd.read_csv(csv_path)
 print(f"Number of rows in DataFrame: {len(df)}")
 
+headers = {"accept": "application/json"}
 
-# url = "https://api.diffbot.com/v3/article?url=https%3A%2F%2Fwww.technologyreview.com%2F2020%2F09%2F04%2F1008156%2Fknowledge-graph-ai-reads-web-machine-learning-natural-language-processing%2F&token=" + api_key
+n_i = 0
+n_f = 5
 
-# headers = {"accept": "application/json"}
+print(f"Processing rows {n_i} to {n_f} from DataFrame...")
 
-# response = requests.get(url, headers=headers)
+for index, row in df.iloc[n_i:n_f].iterrows():
+    link = row.get("Link")
+    if pd.isna(link) or not str(link).strip():
+        print(f"Skipping row {index}: missing link")
+        continue
 
-# print(response.text)
+    try:
+        response = requests.get(link, headers=headers, timeout=15)
+        print(f"Row {index}: status={response.status_code} -> {link}")
+        print(response.text)
+    except requests.RequestException as exc:
+        print(f"Row {index}: request failed for {link}: {exc}")
