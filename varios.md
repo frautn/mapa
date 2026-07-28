@@ -3,6 +3,8 @@
 ID 5: Un detenido por venta de drogas en una casilla en Barrio Matera - Diariolaprimera  
 ""text"": ""Performing security verification\nThis website uses a security service to protect against malicious bots. This page is displayed while the website verifies you are not a bot.""
 
+Probar: al analizar con LLM, preguntar si la respuesta parece ser un anti-bot y reportar esos casos.
+
 
 # Tokens
 

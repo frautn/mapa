@@ -30,12 +30,13 @@ api_key = os.getenv('DIFFBOT_API_KEY')
 
 base_dir = Path.cwd()
 csv_path = base_dir / ".." / "data" / "Monitoreo noticias with articles.csv"
+output_csv_path = csv_path
 
 df = pd.read_csv(csv_path)
 print(f"Number of rows in DataFrame: {len(df)}")
 
-n_i = 0
-n_f = 5
+n_i = 15
+n_f = 18
 
 print(f"Processing rows {n_i} to {n_f} from DataFrame...")
 print("Waiting 1 minute between requests to avoid hitting the rate limit...")
@@ -67,9 +68,10 @@ def needs_diffbot_response(value):
 missing_response = subset["diffbot_response"].apply(needs_diffbot_response)
 
 for index, row in subset[missing_response].iterrows():
+    print(f"Processing row {index} (ID = {row.get('ID')})...", end="")
     link = row.get("Link")
     if pd.isna(link) or not str(link).strip():
-        print(f"Skipping row {index}: missing link")
+        print(f" skipping, missing link")
         continue
 
     try:
@@ -77,15 +79,14 @@ for index, row in subset[missing_response].iterrows():
             "url": link
         }
         response = requests.request("GET", url, params=params, headers=headers)
-        print(f"Row {index}: status={response.status_code}")
+        print(f" status={response.status_code}")
         response_json = response.json()
         df.at[index, "diffbot_response"] = json.dumps(response_json)
+        df.to_csv(output_csv_path, index=False)
     except requests.RequestException as exc:
-        print(f"Row {index}: request failed: {exc}")
+        print(f" request failed: {exc}")
 
-    time.sleep(65) # Sleep for 65 seconds to avoid hitting the rate limit
+    time.sleep(65)  # Sleep for 65 seconds to avoid hitting the rate limit
 
-output_csv_path = csv_path
 
-df.to_csv(output_csv_path, index=False)
 print(f"Saved dataframe to {output_csv_path}")
