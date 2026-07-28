@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
-12_diffbot_process_list.py
+15_diffbot_process_list.py
 --------------
 Loops through a list of URLs and fetches article data from the Diffbot API for each URL.
-Stores the results in a new csv file (from a pandas DataFrame) for further processing.
-Subtitles might be missing in the results.
+Stores the results updating the csv file (from a pandas DataFrame) for further processing.
+Articles subtitles might be missing in the results.
 
 Usage:
-    python 12_diffbot_process_list.py
+    python 15_diffbot_process_list.py
 
 Dependencies:
     requests, dotenv, pathlib, pandas
@@ -29,23 +29,44 @@ load_dotenv()  # Automatically finds .env file
 api_key = os.getenv('DIFFBOT_API_KEY')
 
 base_dir = Path.cwd()
-csv_path = base_dir / ".." / "data" / "Monitoreo noticias – Mapa de la Policía_with_ID.csv"
+csv_path = base_dir / ".." / "data" / "Monitoreo noticias with articles.csv"
 
 df = pd.read_csv(csv_path)
 print(f"Number of rows in DataFrame: {len(df)}")
-
-df["diffbot_response"] = None
 
 n_i = 0
 n_f = 5
 
 print(f"Processing rows {n_i} to {n_f} from DataFrame...")
+print("Waiting 1 minute between requests to avoid hitting the rate limit...")
+
+if "diffbot_response" not in df.columns:
+    df["diffbot_response"] = pd.NA
 
 url = f"https://api.diffbot.com/v3/article?token={api_key}"
 headers = {}
 
+subset = df.iloc[n_i:n_f]
 
-for index, row in df.iloc[n_i:n_f].iterrows():
+
+# Filter only rows that do not have a diffbot response already.
+def needs_diffbot_response(value):
+    if pd.isna(value):
+        return True
+    if not isinstance(value, str):
+        return True
+    text = value.strip()
+    if not text:
+        return True
+    try:
+        parsed = json.loads(text)
+    except (ValueError, TypeError):
+        return True
+    return not (isinstance(parsed, dict) and "request" in parsed)
+
+missing_response = subset["diffbot_response"].apply(needs_diffbot_response)
+
+for index, row in subset[missing_response].iterrows():
     link = row.get("Link")
     if pd.isna(link) or not str(link).strip():
         print(f"Skipping row {index}: missing link")
@@ -60,10 +81,11 @@ for index, row in df.iloc[n_i:n_f].iterrows():
         response_json = response.json()
         df.at[index, "diffbot_response"] = json.dumps(response_json)
     except requests.RequestException as exc:
-        print(f"Row {index}: request failed for {link}: {exc}")
+        print(f"Row {index}: request failed: {exc}")
 
     time.sleep(65) # Sleep for 65 seconds to avoid hitting the rate limit
 
-output_csv_path = base_dir / ".." / "data" / "Monitoreo noticias – Mapa de la Policía_with_ID_diffbot_response.csv"
+output_csv_path = csv_path
+
 df.to_csv(output_csv_path, index=False)
 print(f"Saved dataframe to {output_csv_path}")
