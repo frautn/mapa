@@ -33,7 +33,7 @@ pip install pillow pydantic
 ### Others
 
 ```
-pip install pandas openpyxl
+pip install pandas openpyxl matplotlib
 ```
 
 Google News scraper:
