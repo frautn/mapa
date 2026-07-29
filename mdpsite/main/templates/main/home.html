@@ -1,0 +1,59 @@
+<!-- main/templates/main/home.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MdP</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; }
+        nav {
+            background-color: #1f2937;
+            color: white;
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-user { display: flex; align-items: center; gap: 10px; }
+        .logout-btn {
+            background: #ef4444;
+            color: white;
+            border: none;
+            padding: 6px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        main { padding: 20px; }
+    </style>
+</head>
+<body>
+    <nav>
+        <strong>MdP</strong>
+        <div class="nav-user">
+            {% if user.is_authenticated %}
+                <span>{{ user.username }}</span>
+                <form method="post" action="{% url 'logout' %}">
+                    {% csrf_token %}
+                    <button class="logout-btn" type="submit">Salir</button>
+                </form>
+            {% else %}
+                <span>Invitado</span>
+            {% endif %}
+        </div>
+    </nav>
+
+    <main>
+        <h1>Latest Articles</h1>
+        {% for article in articles %}
+            <article>
+                <h2>{{ article.title }}</h2>
+                <p>{{ article.content }}</p>
+                <small>Published: {{ article.created_at|date:"M d, Y" }}</small>
+            </article>
+            <hr>
+        {% empty %}
+            <p>No articles posted yet!</p>
+        {% endfor %}
+    </main>
+</body>
+</html>
