@@ -4,6 +4,7 @@
 --------------
 Determina si el hecho ocurrió en CABA.
 Busca: ubicación, fuerza de seguridad, fecha del hecho.
+Guarda los resultados en un CSV con las columnas: ID, ocurrio_en_CABA, ubicacion, fuerza_de_seguridad, fecha_del_hecho.
 
 Usage:
     python 22_LLM_clasificar_CABA_y_otros.py
@@ -50,7 +51,7 @@ question = "Responde 'SI', 'NO', o 'NO SE PUEDE DETERMINAR' si el hecho ocurrió
 client = genai.Client(api_key=api_key)
 
 MAX_RETRIES = 5
-INITIAL_BACKOFF_SECONDS = 2
+INITIAL_BACKOFF_SECONDS = 20
 
 
 def extract_json_object(text: str) -> dict:
