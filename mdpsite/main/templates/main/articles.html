@@ -37,6 +37,13 @@
             flex-direction: column;
             gap: 6px;
         }
+        .list-col {
+            max-height: calc(100vh - 130px);
+        }
+        .list-col .col-body {
+            overflow-y: auto;
+            overscroll-behavior: contain;
+        }
         .article-item a {
             display: block;
             text-decoration: none;
@@ -83,11 +90,14 @@
                 grid-template-columns: 1fr;
                 min-height: auto;
             }
+            .list-col {
+                max-height: none;
+            }
         }
     </style>
 
     <div class="articles-layout">
-        <section class="articles-col">
+        <section class="articles-col list-col">
             <div class="col-header">Listado</div>
             <div class="col-body">
                 <ul class="article-list">
