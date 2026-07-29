@@ -43,17 +43,7 @@
     </nav>
 
     <main>
-        <h1>Latest Articles</h1>
-        {% for article in articles %}
-            <article>
-                <h2>{{ article.title }}</h2>
-                <p>{{ article.content }}</p>
-                <small>Published: {{ article.created_at|date:"M d, Y" }}</small>
-            </article>
-            <hr>
-        {% empty %}
-            <p>No articles posted yet!</p>
-        {% endfor %}
+
     </main>
 </body>
 </html>
