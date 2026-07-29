@@ -1,3 +1,10 @@
+## Cuadernos y reportes
+
+<!-- [Forzado](https://colab.research.google.com/github/frautn/F2/blob/main/ondas/forzadas.ipynb) -->
+
+- [16_diffbot_EDA Report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/OWNER/REPO/BRANCH/mdp/16_diffbot_EDA.html)
+
+
 ## Environment
 
 ```
