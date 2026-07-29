@@ -1,59 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Importar/Exportar | MdP</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 0; }
-        nav {
-            background-color: #1f2937;
-            color: white;
-            padding: 12px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .nav-left { display: flex; align-items: center; gap: 20px; }
-        .nav-links { display: flex; gap: 14px; }
-        .nav-links a { color: white; text-decoration: none; opacity: 0.9; }
-        .nav-links a:hover { opacity: 1; text-decoration: underline; }
-        .nav-user { display: flex; align-items: center; gap: 10px; }
-        .logout-btn {
-            background: #ef4444;
-            color: white;
-            border: none;
-            padding: 6px 10px;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        main { padding: 20px; }
-    </style>
-</head>
-<body>
-    <nav>
-        <div class="nav-left">
-            <strong>MdP</strong>
-            <div class="nav-links">
-                <a href="{% url 'articles' %}">Artículos</a>
-                <a href="{% url 'import_export' %}">Importar/Exportar</a>
-            </div>
-        </div>
-        <div class="nav-user">
-            {% if user.is_authenticated %}
-                <span>{{ user.username }}</span>
-                <form method="post" action="{% url 'logout' %}">
-                    {% csrf_token %}
-                    <button class="logout-btn" type="submit">Salir</button>
-                </form>
-            {% else %}
-                <span>Invitado</span>
-            {% endif %}
-        </div>
-    </nav>
+{% extends 'main/base.html' %}
 
-    <main>
-        <h1>Importar/Exportar</h1>
-        <p>Página de importación y exportación en construcción.</p>
-    </main>
-</body>
-</html>
+{% block title %}Importar/Exportar | MdP{% endblock %}
+
+{% block content %}
+    <h1>Importar/Exportar</h1>
+    <p>Página de importación y exportación en construcción.</p>
+{% endblock %}
