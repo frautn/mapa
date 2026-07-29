@@ -33,7 +33,7 @@ pip install pillow pydantic
 ### Others
 
 ```
-pip install pandas openpyxl matplotlib
+pip install pandas openpyxl matplotlib notebook
 ```
 
 Google News scraper:
@@ -43,4 +43,11 @@ https://github.com/ranahaani/GNews
 ```
 pip install gnews
 
+```
+
+### Useful commands
+
+Adding files that are excluded in .gitignore:
+```
+git add -f path_to_file
 ```
