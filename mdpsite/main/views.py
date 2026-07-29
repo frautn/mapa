@@ -90,7 +90,25 @@ def home(request):
 
 
 def articles(request):
-    return render(request, 'main/articles.html')
+    articles_qs = Article.objects.select_related('content').order_by('ID')
+    selected_article_id = request.GET.get('article_id')
+
+    selected_article = None
+    if selected_article_id:
+        selected_article = articles_qs.filter(ID=selected_article_id).first()
+    if selected_article is None:
+        selected_article = articles_qs.first()
+
+    selected_html_content = ''
+    if selected_article and hasattr(selected_article, 'content'):
+        selected_html_content = selected_article.content.html_content
+
+    context = {
+        'articles': articles_qs,
+        'selected_article': selected_article,
+        'selected_html_content': selected_html_content,
+    }
+    return render(request, 'main/articles.html', context)
 
 
 def import_export(request):
