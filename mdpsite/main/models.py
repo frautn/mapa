@@ -43,9 +43,23 @@ class Article(models.Model):
         dt = parsedate_to_datetime(raw_value)
         if dt is None:
             raise ValidationError('Invalid date format. Expected RFC-2822/GMT style.')
+        utc_tz = timezone.get_fixed_timezone(0)
         if timezone.is_naive(dt):
-            dt = timezone.make_aware(dt, timezone.utc)
-        return dt.astimezone(timezone.utc)
+            dt = timezone.make_aware(dt, utc_tz)
+        return dt.astimezone(utc_tz)
 
     def date_as_gmt_string(self) -> str:
-        return self.date.astimezone(timezone.utc).strftime("%a, %d %b %Y %H:%M:%S GMT")
+        utc_tz = timezone.get_fixed_timezone(0)
+        return self.date.astimezone(utc_tz).strftime("%a, %d %b %Y %H:%M:%S GMT")
+
+
+class ArticleContent(models.Model):
+    article = models.OneToOneField(
+        Article,
+        on_delete=models.CASCADE,
+        related_name='content',
+    )
+    html_content = models.TextField()
+
+    def __str__(self):
+        return f"HTML content for {self.article_id}"
