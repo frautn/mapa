@@ -121,5 +121,5 @@ STATIC_URL = 'static/'
 
 
 LOGIN_URL = 'login'
-LOGIN_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = 'articles'
 LOGOUT_REDIRECT_URL = 'login'
