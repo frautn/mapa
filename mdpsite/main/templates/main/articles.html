@@ -37,6 +37,26 @@
             flex-direction: column;
             gap: 6px;
         }
+        .list-search {
+            margin-bottom: 10px;
+        }
+        .list-search form {
+            display: flex;
+            gap: 8px;
+        }
+        .list-search input {
+            width: 100%;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            padding: 8px 10px;
+        }
+        .list-search button {
+            border: 1px solid #d1d5db;
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 8px 10px;
+            cursor: pointer;
+        }
         .list-col {
             max-height: calc(100vh - 130px);
         }
@@ -100,10 +120,22 @@
         <section class="articles-col list-col">
             <div class="col-header">Listado</div>
             <div class="col-body">
+                <div class="list-search">
+                    <form method="get" action="{% url 'articles' %}">
+                        <input
+                            type="search"
+                            name="q"
+                            value="{{ search_query }}"
+                            placeholder="Buscar por ID o título"
+                            aria-label="Buscar artículos"
+                        >
+                        <button type="submit">Buscar</button>
+                    </form>
+                </div>
                 <ul class="article-list">
                     {% for article in articles %}
                         <li class="article-item {% if selected_article and article.ID == selected_article.ID %}active{% endif %}">
-                            <a href="{% url 'articles' %}?article_id={{ article.ID }}">{{ article.ID }} - {{ article.GNews_title }}</a>
+                            <a href="{% url 'articles' %}?article_id={{ article.ID }}{% if search_query %}&q={{ search_query|urlencode }}{% endif %}">{{ article.ID }} - {{ article.GNews_title }}</a>
                         </li>
                     {% empty %}
                         <li>No hay artículos cargados.</li>

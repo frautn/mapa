@@ -6,6 +6,7 @@ import json
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.utils import timezone
+from django.db.models import Q
 
 from .models import Article, ArticleContent
 
@@ -91,6 +92,12 @@ def home(request):
 
 def articles(request):
     articles_qs = Article.objects.select_related('content').order_by('ID')
+    search_query = (request.GET.get('q') or '').strip()
+    if search_query:
+        articles_qs = articles_qs.filter(
+            Q(ID__icontains=search_query) | Q(GNews_title__icontains=search_query)
+        )
+
     selected_article_id = request.GET.get('article_id')
 
     selected_article = None
@@ -107,6 +114,7 @@ def articles(request):
         'articles': articles_qs,
         'selected_article': selected_article,
         'selected_html_content': selected_html_content,
+        'search_query': search_query,
     }
     return render(request, 'main/articles.html', context)
 
