@@ -35,8 +35,8 @@ output_csv_path = csv_path
 df = pd.read_csv(csv_path)
 print(f"Number of rows in DataFrame: {len(df)}")
 
-n_i = 15
-n_f = 18
+n_i = 879
+n_f = 1000
 
 print(f"Processing rows {n_i} to {n_f} from DataFrame...")
 print("Waiting 1 minute between requests to avoid hitting the rate limit...")
