@@ -45,10 +45,16 @@
             gap: 8px;
         }
         .list-search input {
-            width: 100%;
+            flex: 1;
             border: 1px solid #d1d5db;
             border-radius: 8px;
             padding: 8px 10px;
+        }
+        .list-search select {
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            padding: 8px 10px;
+            background: #ffffff;
         }
         .list-search button {
             border: 1px solid #d1d5db;
@@ -129,13 +135,19 @@
                             placeholder="Buscar por ID o título"
                             aria-label="Buscar artículos"
                         >
+                        <select name="validado" aria-label="Filtrar por validado">
+                            <option value="" {% if not validado_filter %}selected{% endif %}>Todos</option>
+                            {% for value, label in validado_choices %}
+                                <option value="{{ value }}" {% if validado_filter == value %}selected{% endif %}>{{ label }}</option>
+                            {% endfor %}
+                        </select>
                         <button type="submit">Buscar</button>
                     </form>
                 </div>
                 <ul class="article-list">
                     {% for article in articles %}
                         <li class="article-item {% if selected_article and article.ID == selected_article.ID %}active{% endif %}">
-                            <a href="{% url 'articles' %}?article_id={{ article.ID }}{% if search_query %}&q={{ search_query|urlencode }}{% endif %}">{{ article.ID }} - {{ article.GNews_title }}</a>
+                            <a href="{% url 'articles' %}?article_id={{ article.ID }}{% if search_query %}&q={{ search_query|urlencode }}{% endif %}{% if validado_filter %}&validado={{ validado_filter|urlencode }}{% endif %}">{{ article.ID }} - {{ article.GNews_title }}</a>
                         </li>
                     {% empty %}
                         <li>No hay artículos cargados.</li>

@@ -93,6 +93,14 @@ def home(request):
 def articles(request):
     articles_qs = Article.objects.select_related('content').order_by('ID')
     search_query = (request.GET.get('q') or '').strip()
+    validado_filter = (request.GET.get('validado') or '').strip()
+
+    validado_values = {choice[0] for choice in Article.VALIDADO_CHOICES}
+    if validado_filter and validado_filter in validado_values:
+        articles_qs = articles_qs.filter(validado=validado_filter)
+    else:
+        validado_filter = ''
+
     if search_query:
         articles_qs = articles_qs.filter(
             Q(ID__icontains=search_query) | Q(GNews_title__icontains=search_query)
@@ -115,6 +123,8 @@ def articles(request):
         'selected_article': selected_article,
         'selected_html_content': selected_html_content,
         'search_query': search_query,
+        'validado_filter': validado_filter,
+        'validado_choices': Article.VALIDADO_CHOICES,
     }
     return render(request, 'main/articles.html', context)
 
