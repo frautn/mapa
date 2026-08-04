@@ -49,7 +49,11 @@ https://github.com/ranahaani/GNews
 
 ```
 pip install gnews
+```
 
+Accessing Google Drive
+```
+pip install gspread
 ```
 
 ### Useful commands
