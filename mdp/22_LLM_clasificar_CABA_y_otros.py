@@ -33,8 +33,6 @@ csv_path = base_dir / ".." / "data" / "Monitoreo noticias with diffbot fields.cs
 df_articles = pd.read_csv(csv_path)
 print(f"Number of rows in DataFrame: {len(df_articles)}")
 
-df_articles = df_articles[:50]
-
 load_dotenv()  # Automatically finds .env file
 api_key = os.getenv('GEMINI_API_KEY')
 
@@ -43,8 +41,8 @@ if not api_key:
 
 MODEL_NAME = "gemini-3.5-flash-lite"
 
-n_i = 0
-n_f = 50
+n_i = 50
+n_f = 200
 
 question = "Responde 'SI', 'NO', o 'NO SE PUEDE DETERMINAR' si el hecho ocurrió en CABA. Además, indica la ubicación, la fuerza de seguridad involucrada y la fecha del hecho si es posible. Con esta información, genera un JSON con las claves: 'ID', 'ocurrio_en_CABA', 'ubicacion', 'fuerza_de_seguridad', 'fecha_del_hecho'. Si no se puede determinar alguna de estas claves, asigna el valor 'NO SE PUEDE DETERMINAR'."
 
@@ -117,6 +115,7 @@ def generate_with_retry(prompt: str, model_name: str) -> tuple[str, str]:
 
 results = []
 for index, row in df_articles.iloc[n_i:n_f].iterrows():
+# for index, row in df_articles.iterrows():
     article_id = str(row["ID"]).strip()
     html_code = str(row["diffbot_html"]).strip()
     if not html_code or html_code == "nan":
