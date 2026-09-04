@@ -31,7 +31,7 @@ postgres_password = os.getenv('POSTGRES_PASSWORD')
 SECRET_KEY = django_secret_key
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # Parse the comma-separated string into a clean list
 ALLOWED_HOSTS = [
