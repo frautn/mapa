@@ -58,3 +58,7 @@ Adding files that are excluded in .gitignore, such as csv files with data:
 ```
 git add -f path_to_file
 ```
+
+## TODO
+
+- requirements.txt for cloud instance: without packages such as jupyter
