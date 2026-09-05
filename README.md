@@ -1,10 +1,9 @@
-## Cuadernos
+## Cuadernos en /public
 
 
 | Archivo |  Contenido                 | Enlace |
 |---------------------------------|------| ---|
-| 01 | Primero | [![](/assets/colab-badge-es.svg)](https://colab.research.google.com/github/frautn/mapa/blob/main/public/20_compara_resultados_busqueda.ipynb) |
-| 01 | Primero | [![](/assets/colab-badge-es.svg)](https://colab.research.google.com/github/frautn/mapa/blob/compara/public/20_compara_resultados_busqueda.ipynb) |
+| 20_compara_resultados_busqueda | Compara entre AppsScript y GNews | [![](/assets/colab-badge-es.svg)](https://colab.research.google.com/github/frautn/mapa/blob/compara/public/20_compara_resultados_busqueda.ipynb) |
 
 
 <!-- - [16_diffbot_EDA Report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/frautn/mapa/main/mdp/16_diffbot_EDA.html)  -->
