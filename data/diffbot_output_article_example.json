@@ -1,0 +1,88 @@
+{
+  "request": {
+    "pageUrl": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQeTdUR2hMX3JiTlVBMlhqNnBjSzYybjMyNjdLRlVvWHlwcDV0OHh4bnFleVNZNHJoQUlxRGk5TFFjbjl3c1owNTJhTmtFbE9RQ2tZOHY1Q3FKT01TWE9DbTJYOG83ejdMQjZETW4wLUVJNHEwUmhOSG0xRmZJQkpSenZkVmRkVWJhMWpYSlk5TmZMTnF6QmNfWUtpaDVsTzlRVmkxR0ptNNIBrAFBVV95cUxNZWwwckx6dDc1a091UGdtei11TTBnUWt5VjBsR2x0ZlVKbHlvWFc1emswZno2SU4wQWpuUXdpaTNDNmZwc2J1VmFVWEszTVk4YUFQbzhvbU1ITXdnMEg2SzlBdEczZF90SGh1Vzh2aTktejZxX19CTlowbG9YT243eGx2YzZVM3k4Y3ZiSkt5VWhHUG1IUktqUGlISmtZN2RPOEVZODQ5M1hRcU1q?oc=5",
+    "api": "article",
+    "version": 3,
+    "resolvedPageUrl": "https://www.lacapital.com.ar/politica/tragedia-once-vido-fue-comodoro-py-y-quedo-detenido-n10229637.html"
+  },
+  "objects": [
+    {
+      "date": "Thu, 13 Nov 2025 18:49:00 GMT",
+      "sentiment": -0.999,
+      "images": [
+        {
+          "author": "Foto: Archivo / La Capital.",
+          "naturalHeight": 361,
+          "width": 728,
+          "title": "Julio De Vido se entregó esta mañana en los tribunales de Comodoro Py.",
+          "url": "https://media.lacapital.com.ar/p/346a549929e2e49c8827cb81e6902f3f/adjuntos/203/imagenes/027/444/0027444121/642x0/smart/13_na_72690899__07-10-2019__200x800jpg.jpg",
+          "naturalWidth": 642,
+          "primary": true,
+          "height": 409
+        }
+      ],
+      "shareLinks": false,
+      "estimatedDate": "Thu, 13 Nov 2025 18:49:00 GMT",
+      "publisherRegion": "South America",
+      "icon": "https://www.lacapital.com.ar/css-custom/203/favicons/apple-icon-precomposed.png",
+      "diffbotUri": "article|3|-1546467210",
+      "siteName": "La Capital On Line",
+      "type": "article",
+      "title": "Tragedia de Once: De Vido fue a Comodoro Py y quedó detenido",
+      "tags": [
+        {
+          "score": 0.8857021927833557,
+          "sentiment": -0.912,
+          "count": 6,
+          "label": "Julio de Vido",
+          "uri": "https://diffbot.com/entity/E7c3gn5qTN9ug-ZSZisSiqQ",
+          "rdfTypes": [
+            "http://dbpedia.org/ontology/Person"
+          ]
+        },
+        {
+          "score": 0.5329435467720032,
+          "sentiment": 0,
+          "count": 3,
+          "label": "Comodoro Py (Buenos Aires)",
+          "uri": "https://diffbot.com/entity/ES_TqoHIqPKqRPU7rKtW5Rg",
+          "rdfTypes": [
+            "http://dbpedia.org/ontology/Place"
+          ]
+        }
+      ],
+      "publisherCountry": "Argentina",
+      "breadcrumb": [
+        {
+          "link": "https://www.lacapital.com.ar/",
+          "name": "La Capital"
+        },
+        {
+          "link": "https://www.lacapital.com.ar/secciones/politica.html",
+          "name": "Política"
+        },
+        {
+          "link": "https://www.lacapital.com.ar/tragedia-once-a1040972.html",
+          "name": "Tragedia de Once"
+        }
+      ],
+      "humanLanguage": "es",
+      "pageUrl": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQeTdUR2hMX3JiTlVBMlhqNnBjSzYybjMyNjdLRlVvWHlwcDV0OHh4bnFleVNZNHJoQUlxRGk5TFFjbjl3c1owNTJhTmtFbE9RQ2tZOHY1Q3FKT01TWE9DbTJYOG83ejdMQjZETW4wLUVJNHEwUmhOSG0xRmZJQkpSenZkVmRkVWJhMWpYSlk5TmZMTnF6QmNfWUtpaDVsTzlRVmkxR0ptNNIBrAFBVV95cUxNZWwwckx6dDc1a091UGdtei11TTBnUWt5VjBsR2x0ZlVKbHlvWFc1emswZno2SU4wQWpuUXdpaTNDNmZwc2J1VmFVWEszTVk4YUFQbzhvbU1ITXdnMEg2SzlBdEczZF90SGh1Vzh2aTktejZxX19CTlowbG9YT243eGx2YzZVM3k4Y3ZiSkt5VWhHUG1IUktqUGlISmtZN2RPOEVZODQ5M1hRcU1q?oc=5",
+      "html": "<p>El exministro de Planificaci&oacute;n durante los gobiernos kirchneristas deber&aacute; cumplir una condena de cuatro a&ntilde;os de prisi&oacute;n. Fue trasladado a la c&aacute;rcel de Ezeiza</p>\n<figure><picture> <figure><img alt=\"Julio De Vido se entregó esta mañana en los tribunales de Comodoro Py.\" src=\"https://media.lacapital.com.ar/p/346a549929e2e49c8827cb81e6902f3f/adjuntos/203/imagenes/027/444/0027444121/642x0/smart/13_na_72690899__07-10-2019__200x800jpg.jpg\"></img><figcaption>Julio De Vido se entreg&oacute; esta ma&ntilde;ana en los tribunales de Comodoro Py.</figcaption></figure>    </picture></figure>\n<p>El<strong> exministro de Planificaci&oacute;n Federal<a href=\"https://www.lacapital.com.ar/politica/tragedia-once-la-defensa-julio-vido-pidio-revocar-su-condena-y-se-presentara-la-onu-n10229354.html\">Julio De Vido </a> se present&oacute; este jueves en los tribunales de Comodoro Py y deber&aacute; cumplir una condena de cuatro a&ntilde;os de prisi&oacute;n</strong> por los hechos que la Justicia defini&oacute; que derivaron en <strong>la tragedia ferroviaria que caus&oacute; m&aacute;s de 50 muertos</strong>.</p>\n<p>El exfuncionario<strong> se entreg&oacute; luego de que la Corte Suprema de Justicia rechazara el &uacute;ltimo recurso presentado por su defensa para evitar la prisi&oacute;n</strong>.</p>\n<p>De ese modo, el Tribunal Oral Federal (TOF) N&ordm; 4 <strong>hizo efectiva la ejecuci&oacute;n de la pena de cuatro a&ntilde;os por el delito de administraci&oacute;n fraudulenta </strong>y esta tarde De Vido fue trasladado a la c&aacute;rcel de Ezeiza.</p>\n<p>En un principio, el tribunal <strong>lo hab&iacute;a condenado en 2018 a cinco a&ntilde;os de prisi&oacute;n</strong> por administraci&oacute;n fraudulenta.<strong> Pero la pena fue reducida a cuatro a&ntilde;os por la C&aacute;mara de Casaci&oacute;n</strong>.</p>\n<p>Ahora deber&aacute; definir <strong>si se acepta el pedido del exfuncionario kirchnerista para cumplir la pena en su casa</strong>. Mientras tanto, permanecer&aacute; en el penal.</p>\n<h2>De Vido y la causa Cuadernos</h2>\n<p>De Vido se present&oacute;, pasadas las 8.15, en Comodoro Py, donde qued&oacute; detenido. Desde entonces, el hall del sexto piso permanece parcialmente cerrado por un operativo especial de seguridad a cargo de agentes del Servicio Penitenciario y las Polic&iacute;as de la Ciudad de Buenos Aires y Federal (PFA).</p>\n<p>Desde all&iacute;, <strong>el exfuncionario se conect&oacute;, a las 10, de modo virtual a la segunda audiencia del juicio por la causa Cuadernos</strong>, en la que fue acusado de miembro y organizador de una asociaci&oacute;n il&iacute;cita.</p>\n<p><strong>&gt;&gt;Leer m&aacute;s: <a href=\"https://www.lacapital.com.ar/c10229354\">Tragedia de Once: la defensa de Julio De Vido pidi&oacute; revocar su condena y se presentar&aacute; en la ONU</a></strong></p>\n<p>El exfuncionario fue hallado <strong>culpable, como part&iacute;cipe necesario, del delito de administraci&oacute;n fraudulenta en perjuicio del Estado por el manejo de los subsidios al Ferrocarril Sarmiento, cuya deficiente administraci&oacute;n deriv&oacute; en el choque ocurrido el 22 de febrero de 2012, que dej&oacute; 52 muertos y m&aacute;s de 700 heridos</strong>.</p>\n<p>Tras el rechazo de la Corte, la defensa del exministro present&oacute; un recurso de reposici&oacute;n alegando que <strong>todav&iacute;a resta resolver un planteo de prescripci&oacute;n de la acci&oacute;n penal</strong>.</p>\n<p>Pero los jueces del TOF desestimaron el intento al se&ntilde;alar que <strong>&ldquo;los motivos esgrimidos no encuadran en ninguno de los supuestos legales&rdquo; para suspender una condena firme</strong>.</p>",
+      "categories": [
+        {
+          "score": 0.569,
+          "name": "Historic Site and Landmark Tours",
+          "id": "iabv2-153"
+        },
+        {
+          "score": 0.569,
+          "name": "Events and Attractions",
+          "id": "iabv2-150"
+        }
+      ],
+      "text": "El exministro de Planificación durante los gobiernos kirchneristas deberá cumplir una condena de cuatro años de prisión. Fue trasladado a la cárcel de Ezeiza\nEl exministro de Planificación Federal Julio De Vido se presentó este jueves en los tribunales de Comodoro Py y deberá cumplir una condena de cuatro años de prisión por los hechos que la Justicia definió que derivaron en la tragedia ferroviaria que causó más de 50 muertos.\nEl exfuncionario se entregó luego de que la Corte Suprema de Justicia rechazara el último recurso presentado por su defensa para evitar la prisión.\nDe ese modo, el Tribunal Oral Federal (TOF) Nº 4 hizo efectiva la ejecución de la pena de cuatro años por el delito de administración fraudulenta y esta tarde De Vido fue trasladado a la cárcel de Ezeiza.\nEn un principio, el tribunal lo había condenado en 2018 a cinco años de prisión por administración fraudulenta. Pero la pena fue reducida a cuatro años por la Cámara de Casación.\nAhora deberá definir si se acepta el pedido del exfuncionario kirchnerista para cumplir la pena en su casa. Mientras tanto, permanecerá en el penal.\nDe Vido y la causa Cuadernos\nDe Vido se presentó, pasadas las 8.15, en Comodoro Py, donde quedó detenido. Desde entonces, el hall del sexto piso permanece parcialmente cerrado por un operativo especial de seguridad a cargo de agentes del Servicio Penitenciario y las Policías de la Ciudad de Buenos Aires y Federal (PFA).\nDesde allí, el exfuncionario se conectó, a las 10, de modo virtual a la segunda audiencia del juicio por la causa Cuadernos, en la que fue acusado de miembro y organizador de una asociación ilícita.\n>>Leer más: Tragedia de Once: la defensa de Julio De Vido pidió revocar su condena y se presentará en la ONU\nEl exfuncionario fue hallado culpable, como partícipe necesario, del delito de administración fraudulenta en perjuicio del Estado por el manejo de los subsidios al Ferrocarril Sarmiento, cuya deficiente administración derivó en el choque ocurrido el 22 de febrero de 2012, que dejó 52 muertos y más de 700 heridos.\nTras el rechazo de la Corte, la defensa del exministro presentó un recurso de reposición alegando que todavía resta resolver un planteo de prescripción de la acción penal.\nPero los jueces del TOF desestimaron el intento al señalar que “los motivos esgrimidos no encuadran en ninguno de los supuestos legales” para suspender una condena firme.",
+      "resolvedPageUrl": "https://www.lacapital.com.ar/politica/tragedia-once-vido-fue-comodoro-py-y-quedo-detenido-n10229637.html"
+    }
+  ]
+}
