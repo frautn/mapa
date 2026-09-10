@@ -2,13 +2,13 @@ services:
   db:
     image: postgres:16-alpine
     container_name: django_postgres
-    restart: always
+    restart: always  # use always in cloud, change to unless-stopped for development
     environment:
       POSTGRES_DB: myproject_db
       POSTGRES_USER: myproject_user
       POSTGRES_PASSWORD: mysecretpassword
     ports:
-      - "5432:5432"
+      - "5432:5432"  # change port if there are other projects using postgres
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
