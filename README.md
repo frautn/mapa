@@ -3,8 +3,8 @@
 
 | Archivo |  Contenido                 | Enlace |
 |---------------------------------|------| ---|
-<!-- | 20_compara_resultados_busqueda | Compara entre AppsScript y GNews | [![](/assets/colab-badge-es.svg)](https://colab.research.google.com/github/frautn/mapa/blob/main/public/20_compara_resultados_busqueda.ipynb) | -->
 | 30_diffbot_descarga_textos | Compara entre AppsScript y GNews | [![](/assets/colab-badge-es.svg)](https://colab.research.google.com/github/frautn/mapa/blob/diff/public/30_diffbot_descarga_textos.ipynb) |
+<!-- | 20_compara_resultados_busqueda | Compara entre AppsScript y GNews | [![](/assets/colab-badge-es.svg)](https://colab.research.google.com/github/frautn/mapa/blob/main/public/20_compara_resultados_busqueda.ipynb) | -->
 
 
 <!-- - [16_diffbot_EDA Report](https://htmlpreview.github.io/?https://raw.githubusercontent.com/frautn/mapa/main/mdp/16_diffbot_EDA.html)  -->
