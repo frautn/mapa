@@ -8,15 +8,13 @@ Usage:
     python 14_diffbot_credits.py
 
 Dependencies:
-    requests, dotenv, pathlib, pandas
+    requests, dotenv, os
     
 Make sure to set your Diffbot API key in a .env file as follows:
     DIFFBOT_API_KEY=your_diffbot_api_key
 """
 
 import requests
-import json
-
 from dotenv import load_dotenv
 import os
 load_dotenv()  # Automatically finds .env file
