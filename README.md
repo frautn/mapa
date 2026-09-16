@@ -4,7 +4,7 @@
 | Archivo |  Contenido                 | Enlace |
 |---------------------------------|------| ---|
 | 30_diffbot_descarga_textos | Descarga textos de artículos y los guarda en .txt | [![](/assets/colab-badge-es.svg)](https://colab.research.google.com/github/frautn/mapa/blob/main/public/30_diffbot_descarga_textos.ipynb) |
-| 31_gdrive_uploading-downloading | Descarga textos de artículos y los guarda en .txt | [![](/assets/colab-badge-es.svg)](https://colab.research.google.com/github/frautn/mapa/blob/main/public/31_gdrive_uploading-downloading.ipynb) |
+| 31_gdrive_uploading-downloading | Descarga textos de artículos y los guarda en .txt | [![](/assets/colab-badge-es.svg)](https://colab.research.google.com/github/frautn/mapa/blob/main/code/31_gdrive_uploading-downloading.ipynb) |
 <!-- | 20_compara_resultados_busqueda | Compara entre AppsScript y GNews | [![](/assets/colab-badge-es.svg)](https://colab.research.google.com/github/frautn/mapa/blob/main/public/20_compara_resultados_busqueda.ipynb) | -->
 
 
